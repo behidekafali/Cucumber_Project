@@ -14,11 +14,9 @@ import org.junit.runner.RunWith;
                 "rerun:target/failedScenarios.txt",//Fail olan testleri bu text dosyasına yazar ve tekara çalıştırılmalarına yardımcı olur.
                 "pretty"//Konsola daha güzel renkli yazdırma yapar.
         },
-        features = "src/test/resources/features",
-        glue = "stepdefinitions",
-        tags = "@Login",
-        dryRun = false//'dryRun = true' testi çalıştırmaz, eksik step deinitionları bulur.
+        features = "@target/failedScenarios.txt",//Fail olmuş testleri failedScenarios.txt dosyasından bulur ve tekrar çalıştırır.
+        glue = "stepdefinitions"
 )
 
-public class Runner {
+public class FailedScenariosRunner {
 }
